@@ -17,7 +17,8 @@
         <!-- items -->
         <div class="item-listing__items item-listing--3items">
           <!-- medium item -->
-       <app-product-item *ngFor="let item of productArray" class="item-medium-1" [productItem]="item"></app-product-item>
+       <app-product-item *ngFor="let item of productArray" class="item-medium-1" [productItem]="item"
+         (itemAddTocard)="onItemAddTocard($event)"></app-product-item>
  
         </div>
         <!-- paging -->

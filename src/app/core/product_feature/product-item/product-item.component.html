@@ -1,7 +1,7 @@
   <div class="item-medium-1">
     <div class="item-medium-1__alert" *ngIf="productItem.dicount">Sale</div>
     <div class="item-medium-1__image image" style="background-image:url({{productItem.imageSrc}})">
-      <a href="#" class="item-medium-1__action">Add to Cart</a>
+      <a href="#" class="item-medium-1__action" (click)="onItemadd()">Add to Cart</a>
     </div>
     <a href="#">
       <h4>{{productItem.name}}</h4>

@@ -1,14 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
  
 
 import { product } from 'src/app/_models/product/product.model';
+ 
+ 
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  productArray: product[] = [
+
+
+  @Output() listAddedd: EventEmitter<product> = new EventEmitter<product>();
+
+  onItemAddTocard(product: product) {
+    // console.log(product)
+    this.listAddedd.emit(product)
+}
+  
+    productArray: product[] = [
 
     {
     id: 1,

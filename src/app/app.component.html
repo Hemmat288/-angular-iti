@@ -1,4 +1,4 @@
- <!-- <app-navbar></app-navbar>
- <app-product-list></app-product-list> -->
-<app-test-from-cli>
-  </app-test-from-cli>
+ <app-navbar [listAdd]="AddproductName"></app-navbar>
+ <app-product-list (listAddedd)="Onlistadded($event)" ></app-product-list>
+<!-- <app-test-from-cli>
+  </app-test-from-cli> -->

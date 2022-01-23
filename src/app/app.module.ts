@@ -9,7 +9,7 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { ProductItemComponent } from './core/product_feature/product-item/product-item.component';
 import { ProductListComponent } from './core/product_feature/product-list/product-list.component';
 import { ProductFilterComponent } from './core/product_feature/product-filter/product-filter.component';
- 
+  
  
 
 @NgModule({
@@ -20,7 +20,7 @@ import { ProductFilterComponent } from './core/product_feature/product-filter/pr
      NavbarComponent,
      ProductItemComponent,
      ProductListComponent,
-     ProductFilterComponent
+     ProductFilterComponent 
   ],
   imports: [
     BrowserModule,
@@ -31,3 +31,4 @@ import { ProductFilterComponent } from './core/product_feature/product-filter/pr
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+ 

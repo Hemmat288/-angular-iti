@@ -9,6 +9,7 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { ProductItemComponent } from './core/product_feature/product-item/product-item.component';
 import { ProductListComponent } from './core/product_feature/product-list/product-list.component';
 import { ProductFilterComponent } from './core/product_feature/product-filter/product-filter.component';
+import { DropdownComponent } from './shared/dropdown/dropdown.component';
   
  
 
@@ -20,7 +21,8 @@ import { ProductFilterComponent } from './core/product_feature/product-filter/pr
      NavbarComponent,
      ProductItemComponent,
      ProductListComponent,
-     ProductFilterComponent 
+     ProductFilterComponent,
+     DropdownComponent 
   ],
   imports: [
     BrowserModule,

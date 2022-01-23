@@ -13,20 +13,25 @@ import { product } from 'src/app/_models/product/product.model';
 export class AppComponent {
   title = 'my-app';
 
-
+  @Input() delproduct !: product;
   AddproductName : product[]=[];
- 
+
   check = true;
   Onlistadded(listitem: product) {
     if (!this.AddproductName.includes(listitem)) {
       listitem.mount = 1;
-       this.AddproductName.push(listitem);
+      this.AddproductName.push(listitem);
+    
     } else {
       listitem.mount ? listitem.mount++ : listitem.mount;
     }
    
  
-}
+  }
+  
+  deleted() {
+    this.AddproductName.slice(this.AddproductName.indexOf(this.delproduct),1)
+  }
 }
 
 

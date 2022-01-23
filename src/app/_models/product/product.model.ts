@@ -8,5 +8,6 @@ export interface product{
     dicount?: number;
     imageSrc: string;
     supplier?: supplier;
-    mount?:number
+    mount?: number,
+    counter?:number
 }

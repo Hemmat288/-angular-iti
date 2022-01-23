@@ -8,13 +8,17 @@ import { product } from 'src/app/_models/product/product.model';
 })
 export class NavbarComponent implements OnInit {
   
-@Input() listAdd !: product[];
+  @Input() listAdd !: product[];
+  
   constructor() { }
- 
+  delproduct !: product;
   dropdownopended = false;
   delete= false;
 
   ngOnInit(): void {
+    
   }
-
+  deleted() {
+  this.listAdd.splice(this.listAdd.indexOf(this.delproduct),1)
+}
 }

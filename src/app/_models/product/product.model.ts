@@ -7,5 +7,6 @@ export interface product{
     price: number;
     dicount?: number;
     imageSrc: string;
-    supplier ?: supplier;
+    supplier?: supplier;
+    mount?:number
 }

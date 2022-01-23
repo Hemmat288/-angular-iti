@@ -12,24 +12,19 @@ import { product } from 'src/app/_models/product/product.model';
 
 export class AppComponent {
   title = 'my-app';
+
+
   AddproductName : product[]=[];
  
   check = true;
   Onlistadded(listitem: product) {
-    console.log('nav')
-    
-  // for (let index = 0; index < this.AddproductName.length; index++) {
-  //   if (this.AddproductName[index]== listitem) {
-  //     this.check = false;
-  //   }
-  //   console.log(listitem);
-    
-  // }
- 
-  //   if (this.check) {
-  //        }
-  //   this.check = false;
-    this.AddproductName.push(listitem);
+    if (!this.AddproductName.includes(listitem)) {
+      listitem.mount = 1;
+       this.AddproductName.push(listitem);
+    } else {
+      listitem.mount ? listitem.mount++ : listitem.mount;
+    }
+   
  
 }
 }

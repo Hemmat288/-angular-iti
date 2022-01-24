@@ -13,7 +13,7 @@ import { product } from 'src/app/_models/product/product.model';
 export class AppComponent {
   title = 'my-app';
 
-  @Input() delproduct !: product;
+ 
   AddproductName : product[]=[];
 
   check = true;
@@ -29,9 +29,7 @@ export class AppComponent {
  
   }
   
-  deleted() {
-    this.AddproductName.slice(this.AddproductName.indexOf(this.delproduct),1)
-  }
+ 
 }
 
 

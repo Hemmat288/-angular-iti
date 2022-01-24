@@ -10,6 +10,11 @@ import { ProductItemComponent } from './core/product_feature/product-item/produc
 import { ProductListComponent } from './core/product_feature/product-list/product-list.component';
 import { ProductFilterComponent } from './core/product_feature/product-filter/product-filter.component';
 import { DropdownComponent } from './shared/dropdown/dropdown.component';
+import { productServices } from './_sevices/product/product.services';
+import { ProductDetailsComponent } from './core/product_feature/product-details/product-details.component';
+import { ProductFormComponent } from './core/product_feature/product-form/product-form.component';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
+import { FormsModule } from '@angular/forms';
   
  
 
@@ -22,14 +27,19 @@ import { DropdownComponent } from './shared/dropdown/dropdown.component';
      ProductItemComponent,
      ProductListComponent,
      ProductFilterComponent,
-     DropdownComponent 
+     DropdownComponent,
+     ProductDetailsComponent,
+     ProductFormComponent,
+     NotFoundComponent 
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+
+  BrowserModule,
+    AppRoutingModule,
+     FormsModule
    
   ],
-  providers: [],
+  providers: [productServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

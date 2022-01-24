@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { product } from 'src/app/_models/product/product.model';
+import { product, productWithCounter } from 'src/app/_models/product/product.model';
+import { productServices } from './../../_sevices/product/product.services';
  
 @Component({
   selector: 'app-navbar',
@@ -8,17 +9,29 @@ import { product } from 'src/app/_models/product/product.model';
 })
 export class NavbarComponent implements OnInit {
   
-  @Input() listAdd !: product[];
-  
-  constructor() { }
-  delproduct !: product;
+  listAdd : productWithCounter[]=[];
+
+    delproduct! : product;
   dropdownopended = false;
-  delete= false;
+    
+ 
+  constructor(private productservices: productServices) { 
+
+  }
+
 
   ngOnInit(): void {
-    
+    this.productservices.cardHasBeenChanged.subscribe(
+      (res) => {
+        this.listAdd=res
+       },
+      (err) => { },
+      ( ) => { },
+    );
   }
-  deleted() {
-  this.listAdd.splice(this.listAdd.indexOf(this.delproduct),1)
+    deleted() {
+ 
+      console.log('nav')
+       
 }
 }

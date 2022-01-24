@@ -1,13 +1,18 @@
  
 import {supplier} from "./supliers.models"
+ 
 export interface product{
    
     id?: number;
     name: string;
     price: number;
+    descrition?: string;
     dicount?: number;
-    imageSrc: string;
+    imageSrc?: string;
     supplier?: supplier;
     mount?: number,
-    counter?:number
+ 
+}
+export interface productWithCounter extends product{
+    counter?:number;
 }

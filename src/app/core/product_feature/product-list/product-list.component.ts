@@ -1,11 +1,11 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
- 
 
- 
+
+
 import { productServices } from './../../../_sevices/product/product.services';
 import { product } from 'src/app/_models/product/product.model';
- 
- 
+
+
 
 @Component({
   selector: 'app-product-list',
@@ -14,15 +14,22 @@ import { product } from 'src/app/_models/product/product.model';
 })
 export class ProductListComponent  {
 
-  productArray: product[]; 
+  productArray: product[]=[];
     constructor(private productservices: productServices) {
-    this.productArray = this.productservices.getAllProduct(); 
+
    }
- 
-  
+
+
 
 
   ngOnInit(): void {
+     this.productservices.getAllProduct().subscribe(
+       (res) => {
+         this.productArray = res.product;
+       },
+       (err)=>{},
+       ()=>{}
+     );
   }
 
 }

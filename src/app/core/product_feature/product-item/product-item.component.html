@@ -4,17 +4,17 @@
       <a href="#" class="item-medium-1__action" (click)="onItemadd()">Add to Cart</a>
     </div>
     <a href="#">
-      <h4>{{productItem.name}}</h4>
+      <h4>{{productItem.data[0].name}}</h4>
       <div class="flex-row">
         <div>
-          <del *ngIf="productItem.dicount"> {{productItem.dicount}}</del>
-          <span class="lable"> ${{calculatePrice()}}</span>
+          <del *ngIf="productItem.dicount"> {{productItem.dicount| currency:'EUR'}}</del>
+          <span class="lable"> {{ +calculatePrice() |currency:'EGP'}}</span>
         </div>
       </div>
     </a>
     <div class="crud-actions">
-      <a routerLink="product_details"><i class="far fa-eye"></i></a>
-      <a routerLink="product_add"><i class="fas fa-edit"></i></a>
+      <a [routerLink]="['/product','details',productItem.id]"><i class="far fa-eye"></i></a>
+      <a [routerLink]="['/product','edit',productItem.id]"><i class="fas fa-edit"></i></a>
       <a href="#"><i class="fas fa-trash-alt"></i></a>
     </div>
   </div>

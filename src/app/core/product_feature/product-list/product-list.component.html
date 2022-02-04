@@ -1,4 +1,6 @@
     <div class="container">
+{{'2022/2/2' | date:'short' }}
+
  <app-product-filter class="filters" ></app-product-filter>
       <!-- Items -->
       <section class="item-listing">
@@ -10,7 +12,7 @@
             <option value="3">Price high to low</option>
             <option value="4">Name</option>
           </select>
-          <a class="action-btn" routerLink="product_add">
+          <a class="action-btn" routerLink="product/add">
             <i class="fas fa-plus"></i>
           </a>
         </div>
@@ -19,7 +21,7 @@
           <!-- medium item -->
        <app-product-item *ngFor="let item of productArray" class="item-medium-1" [productItem]="item"
 ></app-product-item>
- 
+
         </div>
         <!-- paging -->
         <div class="paging">
